@@ -3,7 +3,7 @@ package com.webonise.tv.remote;
 /**
  * Created by mukuls-webonise on 9/8/16.
  */
-public interface Remote {
+public interface TVRemote {
 
     void turnDeviceOn();
 

@@ -5,6 +5,8 @@ import java.util.Date;
 /**
  * Created by mukuls-webonise on 9/8/16.
  */
+
+//Class to hold user session information
 public class Session {
 
     private Date createdAt;

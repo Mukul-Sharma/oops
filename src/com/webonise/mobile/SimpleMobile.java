@@ -2,11 +2,12 @@ package com.webonise.mobile;
 
 import com.webonise.mobile.model.Carrier;
 import com.webonise.mobile.model.Mobile;
-import com.webonise.mobile.model.SimpleCarrier;
 
 /**
  * Created by mukuls-webonise on 9/8/16.
  */
+
+//Simple implementation of mobile interface, Delegates carrier for calling responsibility
 public class SimpleMobile implements Mobile {
 
     private boolean isOn;

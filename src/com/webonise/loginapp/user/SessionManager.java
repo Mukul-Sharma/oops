@@ -7,16 +7,18 @@ import com.webonise.loginapp.user.User;
 /**
  * Created by mukuls-webonise on 9/8/16.
  */
+
+//Session manager class, Responsibility is to manage user session
 public class SessionManager {
 
     private LoginProvider loginProvider;
     private Session session;
 
-    public SessionManager(LoginProvider loginProvider) {
+    SessionManager(LoginProvider loginProvider) {
         this.loginProvider = loginProvider;
     }
 
-    public User login(String username, String[] pass) {
+    User login(String username, String[] pass) {
         this.session = loginProvider.login(username, pass);
         User user = new User(this);
         user.username = username;
@@ -24,7 +26,7 @@ public class SessionManager {
         return user;
     }
 
-    public void logout() {
+    void logout() {
         session.clear();
         this.session = null;
     }

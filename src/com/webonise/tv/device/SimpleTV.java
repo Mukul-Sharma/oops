@@ -3,6 +3,9 @@ package com.webonise.tv.device;
 /**
  * Created by mukuls-webonise on 9/8/16.
  */
+
+//Simple implementation for Television interface
+
 public class SimpleTV implements Television {
 
     private final static int MAX_VOLUME = 30;
@@ -13,9 +16,6 @@ public class SimpleTV implements Television {
     private int currentVolume;
     private int maxVolume = MAX_VOLUME;
     private int maxChannels = MAX_CHANNELS;
-
-    public SimpleTV() {
-    }
 
     @Override
     public void turnOn() {

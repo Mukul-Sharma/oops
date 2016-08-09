@@ -24,6 +24,7 @@ public class User {
         this.sessionManager = sessionManager;
     }
 
+//    Login user based on login choice, Writing switch here eliminates using switch anywhere else in program for same purpose
     public static User login(String username, String[] pass, LoginChoice.Choice choice) throws LoginChoice.InvalidChoiceException {
 
         if (choice == null) {

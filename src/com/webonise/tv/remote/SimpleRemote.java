@@ -5,9 +5,12 @@ import com.webonise.tv.device.Television;
 /**
  * Created by mukuls-webonise on 9/8/16.
  */
-public class SimpleRemote implements Remote {
 
-    private Television television;
+//Simple interface for TVRemote interface
+public class SimpleRemote implements TVRemote {
+
+//    Keeping dependency in check
+    private TVRemoteClient television;
 
     public SimpleRemote(Television television) {
         this.television = television;

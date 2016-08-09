@@ -22,7 +22,7 @@ public class Main {
         log("Off", "" + !mobile.isOn());
     }
 
-    static void log(String prop, String value) {
+    private static void log(String prop, String value) {
         System.out.println(prop + " is " + value);
     }
 }
