@@ -9,6 +9,7 @@ import java.util.Calendar;
  * Created by mukuls-webonise on 9/8/16.
  */
 public class LinkedInLoginProvider implements LoginProvider {
+
     @Override
     public Session login(String username, String[] pass) {
         Calendar c = Calendar.getInstance();
@@ -16,4 +17,8 @@ public class LinkedInLoginProvider implements LoginProvider {
         return new Session("random_linked_in_token", c.getTime());
     }
 
+    @Override
+    public String toString() {
+        return "LinkedInLoginProvider";
+    }
 }

@@ -12,6 +12,7 @@ public class SimpleMobile implements Mobile {
     private boolean isOn;
     private Carrier carrier = new SimpleCarrier();
     private Profile profile = Profile.RINGING;
+    private float batteryRemaining = 1.0f;
 
     @Override
     public void turnOn() {
@@ -43,12 +44,13 @@ public class SimpleMobile implements Mobile {
         disconnect();
         try {
             connectCall(number);
-        } catch (NumberNotvalidException e) {
+            reduceBattery();
+        } catch (NumberNotValidException e) {
             e.printStackTrace();
         }
     }
 
-    private void connectCall(String number) throws NumberNotvalidException {
+    private void connectCall(String number) throws NumberNotValidException {
         carrier.connectCall(number);
     }
 
@@ -70,5 +72,13 @@ public class SimpleMobile implements Mobile {
     @Override
     public Profile getCurrentProfile() {
         return profile;
+    }
+
+    private void reduceBattery() {
+        batteryRemaining -= 0.1f;
+    }
+    @Override
+    public float getBatteryRemaining() {
+        return batteryRemaining;
     }
 }

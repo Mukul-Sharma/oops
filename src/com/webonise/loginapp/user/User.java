@@ -1,5 +1,6 @@
 package com.webonise.loginapp.user;
 
+import com.sun.istack.internal.NotNull;
 import com.webonise.loginapp.login.LoginChoice;
 import com.webonise.loginapp.login.LoginProvider;
 import com.webonise.loginapp.login.properietary.SimpleLoginProvider;
@@ -12,13 +13,23 @@ import com.webonise.loginapp.login.social.twitter.TwitterLoginProvider;
  */
 public class User {
 
+    @NotNull
+    String username;
+    @NotNull
+    String loginProvider;
+
     private SessionManager sessionManager;
 
-    protected User(SessionManager sessionManager) {
+    User(SessionManager sessionManager) {
         this.sessionManager = sessionManager;
     }
 
     public static User login(String username, String[] pass, LoginChoice.Choice choice) throws LoginChoice.InvalidChoiceException {
+
+        if (choice == null) {
+            throw  new LoginChoice.InvalidChoiceException();
+        }
+
         switch (choice) {
             case FACEBOOK:
                 return loginWithFacebook(username, pass);
@@ -64,5 +75,15 @@ public class User {
 
     public void signOut() {
         sessionManager.logout();
+    }
+
+    @NotNull
+    public String getUsername() {
+        return username;
+    }
+
+    @NotNull
+    public String getLoginProvider() {
+        return loginProvider;
     }
 }

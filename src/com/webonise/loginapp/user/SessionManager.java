@@ -18,7 +18,10 @@ public class SessionManager {
 
     public User login(String username, String[] pass) {
         this.session = loginProvider.login(username, pass);
-        return new User(this);
+        User user = new User(this);
+        user.username = username;
+        user.loginProvider = loginProvider.toString();
+        return user;
     }
 
     public void logout() {
