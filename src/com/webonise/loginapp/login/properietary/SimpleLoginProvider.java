@@ -13,6 +13,11 @@ public class SimpleLoginProvider implements LoginProvider {
     public Session login(String username, String[] pass) {
         Calendar c = Calendar.getInstance();
         c.add(Calendar.DAY_OF_MONTH, 7);
-        return new Session("random_simple_token", c.getTime());    }
+        return new Session("random_simple_token", c.getTime());
+    }
 
+    @Override
+    public String toString() {
+        return "SimpleLoginProvider";
+    }
 }

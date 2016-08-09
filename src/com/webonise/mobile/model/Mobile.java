@@ -28,4 +28,6 @@ public interface Mobile {
     void setProfile(Profile profile);
 
     Profile getCurrentProfile();
+
+    float getBatteryRemaining();
 }

@@ -1,20 +1,23 @@
-package com.webonise.mobile.model;
+package com.webonise.mobile;
 
-import com.webonise.mobile.NumberNotvalidException;
+import com.webonise.mobile.NumberNotValidException;
+import com.webonise.mobile.model.Carrier;
 
 /**
  * Created by mukuls-webonise on 9/8/16.
  */
+
+//Simple implementation for Carrier interface
 public class SimpleCarrier implements Carrier {
 
     private String currentlyCalling;
 
     @Override
-    public void connectCall(String number) throws NumberNotvalidException {
+    public void connectCall(String number) throws NumberNotValidException {
         if (isValidNumber(number)) {
             currentlyCalling = number;
         } else {
-            throw new NumberNotvalidException();
+            throw new NumberNotValidException();
         }
     }
 

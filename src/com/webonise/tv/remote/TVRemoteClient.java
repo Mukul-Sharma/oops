@@ -1,19 +1,15 @@
-package com.webonise.tv.device;
-
-import com.webonise.tv.remote.TVRemoteClient;
+package com.webonise.tv.remote;
 
 /**
  * Created by mukuls-webonise on 9/8/16.
  */
 
-//Abstraction for tv devices
-public interface Television extends TVRemoteClient {
+//Abstraction for remote clients
+public interface TVRemoteClient {
 
     void turnOn();
 
     void turnOff();
-
-    boolean isOn();
 
     int setChannel(int channelNo);
 
@@ -28,13 +24,5 @@ public interface Television extends TVRemoteClient {
     void upVolumeBy(int amount);
 
     void downVolumeBy(int amount);
-
-    int getTotalChannels();
-
-    int getCurrentChannel();
-
-    int getCurrentVolume();
-
-    int getMaxVolume();
 
 }
